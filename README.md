@@ -1,5 +1,5 @@
 # dashboard
-a besiege mod demo based on dagriefaa`s UIFactory, that`s a cool UI framework
+a besiege mod demo based on dagriefaa's `UIFactory3`, that's a cool UI framework
 
 ## purpose
 show some machine infomation
