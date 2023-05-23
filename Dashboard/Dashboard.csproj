@@ -56,11 +56,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DashboardListener.cs" />
-    <Compile Include="DisplayController.cs" />
+    <Compile Include="Config\LanguageManager.cs" />
+    <Compile Include="Listener\DashboardListener.cs" />
+    <Compile Include="UI\DisplayController.cs" />
+    <Compile Include="DataModel\BaseData.cs" />
+    <Compile Include="DataModel\VelocityData.cs" />
+    <Compile Include="Utils\Messages.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(TargetPath)" "$(ProjectDir)..\..\dashboard\$(TargetFileName)"</PostBuildEvent>

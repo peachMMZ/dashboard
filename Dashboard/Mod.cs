@@ -72,11 +72,12 @@ namespace Dashboard
 			UIProject = dashboard.GetComponent<Project>();
 			UIProject.RebuildTransformList();
 
-			// text
-			UIProject["SpeedText"].GetComponent<Text>().text = "Speed: 0";
+			// 给刷新按钮添加事件
+			UIProject["RefreshButton"].GetComponent<Button>().onClick.AddListener(DashboardListener.OnRefreshButtonClick);
+			UIProject["MeasureToggle"].GetComponent<Toggle>().onValueChanged.AddListener((bool isOn) => { Debug.Log(isOn ? "Measure Start" : "Measure End"); });
 
-			// 给按钮添加监听器
-			UIProject["Button1"].GetComponent<Button>().onClick.AddListener(DashboardListener.OnButtonClick);
+			// 初始化UI数据
+			DisplayController.UpdateUI(new VelocityData());
 
 			stopwatch.Stop();
 			Debug.Log($"[Dashboard] Loaded in {stopwatch.ElapsedMilliseconds}ms");
